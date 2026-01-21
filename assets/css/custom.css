@@ -34,6 +34,11 @@
 }
 
 /* Play Store buttons - make them prominent */
+#apps .actions {
+    text-align: center;
+    justify-content: center;
+}
+
 #apps .button.primary.large {
     font-size: 1.2em;
     padding: 1em 2.5em;
@@ -48,21 +53,79 @@
     transform: translateY(-2px);
 }
 
-/* Screenshot galleries */
+/* Screenshot galleries - horizontal scrollable row */
 #apps .box.alt {
     margin-top: 2em;
     padding-top: 1.5em;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#apps .row.gtr-uniform {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2em;
+    padding-bottom: 1em;
+    align-items: flex-start;
+}
+
+#apps .row.gtr-uniform>div {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+#apps .image.fit {
+    width: auto;
+    height: 100%;
 }
 
 #apps .image.fit img {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    height: 500px;
+    width: auto;
+    min-width: 250px;
+    max-width: none;
+    margin: 0;
+    display: block;
 }
 
 #apps .image.fit img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(74, 202, 168, 0.4);
+}
+
+/* Make screenshots MUCH bigger on large screens */
+@media screen and (min-width: 1280px) {
+    #apps .image.fit img {
+        height: 700px;
+    }
+}
+
+/* Smooth scrolling for screenshot gallery */
+#apps .box.alt {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+#apps .box.alt::-webkit-scrollbar {
+    height: 8px;
+}
+
+#apps .box.alt::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+#apps .box.alt::-webkit-scrollbar-thumb {
+    background: rgba(74, 202, 168, 0.5);
+    border-radius: 4px;
+}
+
+#apps .box.alt::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 202, 168, 0.7);
 }
 
 /* Skills section enhancements */
@@ -132,34 +195,26 @@
         width: 100%;
         text-align: center;
     }
-    
+
     #apps article {
         padding: 1.5em;
     }
-    
+
     #skills h4 {
         font-size: 1.25em;
     }
 }
 
-/* Loading optimization - lazy loading hint */
-img[loading="lazy"] {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-img[loading="lazy"].loaded {
-    opacity: 1;
-}
 
 /* Print styles */
 @media print {
+
     #header,
     #footer,
     .button {
         display: none;
     }
-    
+
     #apps article {
         page-break-inside: avoid;
     }
