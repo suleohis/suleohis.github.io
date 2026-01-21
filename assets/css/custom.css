@@ -1,0 +1,166 @@
+/* Custom Styles for Portfolio */
+
+/* Make Published Apps section more prominent */
+#apps {
+    background: rgba(255, 255, 255, 0.025);
+    border-top: 2px solid rgba(74, 202, 168, 0.5);
+    border-bottom: 2px solid rgba(74, 202, 168, 0.5);
+}
+
+#apps h3 {
+    color: #4acaa8;
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+}
+
+#apps article {
+    background: rgba(255, 255, 255, 0.035);
+    border-left: 4px solid #4acaa8;
+    padding: 2em;
+    margin-bottom: 3em;
+    border-radius: 4px;
+}
+
+#apps article h4 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+
+#apps article h5 {
+    color: #4acaa8;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+/* Play Store buttons - make them prominent */
+#apps .button.primary.large {
+    font-size: 1.2em;
+    padding: 1em 2.5em;
+    background: #4acaa8;
+    box-shadow: 0 4px 8px rgba(74, 202, 168, 0.3);
+    transition: all 0.3s ease;
+}
+
+#apps .button.primary.large:hover {
+    background: #3eb89a;
+    box-shadow: 0 6px 12px rgba(74, 202, 168, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Screenshot galleries */
+#apps .box.alt {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#apps .image.fit img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#apps .image.fit img:hover {
+    transform: scale(1.05);
+}
+
+/* Skills section enhancements */
+#skills h4 {
+    color: #4acaa8;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(74, 202, 168, 0.3);
+}
+
+#skills h4:first-of-type {
+    margin-top: 1em;
+}
+
+#skills .feature-icons li {
+    background: rgba(255, 255, 255, 0.035);
+    border-left: 3px solid #4acaa8;
+    transition: all 0.3s ease;
+}
+
+#skills .feature-icons li:hover {
+    background: rgba(74, 202, 168, 0.1);
+    border-left-color: #3eb89a;
+    transform: translateX(5px);
+}
+
+/* Experience section */
+#experience article {
+    background: rgba(255, 255, 255, 0.025);
+    padding: 1.5em;
+    border-radius: 4px;
+    border-left: 3px solid #4acaa8;
+}
+
+#experience article h4 {
+    color: #4acaa8;
+    margin-bottom: 0.25em;
+}
+
+#experience article ul {
+    margin-top: 1em;
+}
+
+/* Contact section enhancements */
+#contact .icons li {
+    display: block;
+    margin-bottom: 0.75em;
+}
+
+#contact .icons a {
+    transition: color 0.3s ease;
+}
+
+#contact .icons a:hover {
+    color: #4acaa8;
+}
+
+/* Improve readability for tech stacks */
+#apps p strong {
+    color: #4acaa8;
+}
+
+/* Mobile responsiveness improvements */
+@media screen and (max-width: 736px) {
+    #apps .button.primary.large {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #apps article {
+        padding: 1.5em;
+    }
+    
+    #skills h4 {
+        font-size: 1.25em;
+    }
+}
+
+/* Loading optimization - lazy loading hint */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Print styles */
+@media print {
+    #header,
+    #footer,
+    .button {
+        display: none;
+    }
+    
+    #apps article {
+        page-break-inside: avoid;
+    }
+}
